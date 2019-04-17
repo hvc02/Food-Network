@@ -16,14 +16,9 @@ var commentRoutes     = require("./routes/comments"),
     itemRoutes  = require("./routes/items"),
     indexRoutes        = require("./routes/index")   
  
-<<<<<<< HEAD
 //mongoose.connect("mongodb://localhost/yelpfood");
-mongoose.connect("mongodb+srv://admin-hvc:Test123@cluster0-xhyav.mongodb.net/test?retryWrites=true/yelp_food", {useNewUrlParser: true});    
-=======
-//mongoose.connect("mongodb://localhost/yelpfood"); 
 mongoose.connect("mongodb+srv://admin-hvc:Test123@cluster0-xhyav.mongodb.net/yelpfood");    
 
->>>>>>> 1d4e508c9ba59d99798337057ee3b28008e4b857
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine" , "ejs");
 app.use(express.static(__dirname + "/public"));
