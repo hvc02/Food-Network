@@ -16,8 +16,14 @@ var commentRoutes     = require("./routes/comments"),
     itemRoutes  = require("./routes/items"),
     indexRoutes        = require("./routes/index")   
  
+<<<<<<< HEAD
 //mongoose.connect("mongodb://localhost/yelpfood");
 mongoose.connect("mongodb+srv://admin-hvc:Test123@cluster0-xhyav.mongodb.net/test?retryWrites=true/yelp_food", {useNewUrlParser: true});    
+=======
+//mongoose.connect("mongodb://localhost/yelpfood"); 
+mongoose.connect("mongodb+srv://admin-hvc:Test123@cluster0-xhyav.mongodb.net/yelpfood");    
+
+>>>>>>> 1d4e508c9ba59d99798337057ee3b28008e4b857
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine" , "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -48,6 +54,12 @@ app.use("/", indexRoutes);
 app.use("/items", itemRoutes);
 app.use("/items/:id/comments", commentRoutes);
 
-app.listen(3000,function(){
-    console.log("The YelpFood Server Has Started!");    
+let port = process.env.PORT;
+if(port == null || port == "") {
+    port = 3000;
+}
+
+
+app.listen(port,function(){
+    console.log("Server has Started successfully");    
 });
