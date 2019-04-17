@@ -49,6 +49,12 @@ app.use("/", indexRoutes);
 app.use("/items", itemRoutes);
 app.use("/items/:id/comments", commentRoutes);
 
-app.listen(3000,function(){
-    console.log("The YelpFood Server Has Started!");    
+let port = process.env.PORT;
+if(port == null || port == "") {
+    port = 3000;
+}
+
+
+app.listen(port,function(){
+    console.log("Server has Started successfully");    
 });
