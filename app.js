@@ -6,14 +6,14 @@ var express     = require("express"),
     passport    = require("passport"),
     LocalStrategy = require("passport-local"),
     methodOverride = require("method-override"),
-    Item  = require("./models/item"),
+    Restaurant  = require("./models/restaurant"),
     Comment     = require("./models/comment"),
     User        = require("./models/user"),
     seedDB      = require("./seeds");
 
 // REQUIRING ROUTES
 var commentRoutes     = require("./routes/comments"),
-    itemRoutes  = require("./routes/items"),
+    restaurantRoutes  = require("./routes/restaurants"),
     indexRoutes        = require("./routes/index")   
  
 //mongoose.connect("mongodb://localhost/yelpfood");
@@ -46,8 +46,8 @@ app.use(function(req, res, next){
 });
 
 app.use("/", indexRoutes);
-app.use("/items", itemRoutes);
-app.use("/items/:id/comments", commentRoutes);
+app.use("/restaurants", restaurantRoutes);
+app.use("/restaurants/:id/comments", commentRoutes);
 
 let port = process.env.PORT;
 if(port == null || port == "") {

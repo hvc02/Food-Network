@@ -1,18 +1,18 @@
-var Item = require("../models/item");
+var Restaurant = require("../models/restaurant");
 var Comment = require("../models/comment");
 
 // MIDDLEWARES
 var middlewareObj = {};
 
-middlewareObj.checkItemOwnership = function(req, res, next) {
+middlewareObj.checkRestaurantOwnership = function(req, res, next) {
         if(req.isAuthenticated()){
-            Item.findById(req.params.id, function(err, foundItem){
+            Restaurant.findById(req.params.id, function(err, foundRestaurant){
                 if(err){
                     req.flash("error", "Sorry for the inconvenience");
                     res.redirect("back");
                 } else {
-                    //does user own the item(we use .equals cause one is string)
-                    if(foundItem.author.id.equals(req.user._id)){
+                    //does user own the restaurant(we use .equals cause one is string)
+                    if(foundRestaurant.author.id.equals(req.user._id)){
                         next();
                     } else {
                     req.flash("error", "You don't have permission to do that");    

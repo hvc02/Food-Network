@@ -1,28 +1,28 @@
 var express = require("express");
 var router = express.Router({mergeParams: true});
-var Item = require("../models/item")
+var Restaurant = require("../models/restaurant")
 var Comment  = require("../models/comment")
 var middleware = require("../middleware");
 
 // COMMENTS NEW
 router.get("/new", middleware.isLoggedIn , function(req, res){
-    // Find item by id
-     Item.findById(req.params.id, function(err, item){
+    // Find restaurant by id
+     Restaurant.findById(req.params.id, function(err, restaurant){
          if(err) {
              console.log(err);
          } else {
-            res.render("comments/new",{item: item});        
+            res.render("comments/new",{restaurant: restaurant});        
          }
      });
 });
 
 // COMMENT CREATE
 router.post("/", middleware.isLoggedIn , function(req, res){
-    //lookup item using id
-    Item.findById(req.params.id, function(err, item){
+    //lookup restaurant using id
+    Restaurant.findById(req.params.id, function(err, restaurant){
         if(err){
             console.log(err);
-             res.redirect("/items");
+             res.redirect("/restaurants");
         } else {
             Comment.create(req.body.comment, function(err, comment){
                 if(err){
@@ -34,10 +34,10 @@ router.post("/", middleware.isLoggedIn , function(req, res){
                     comment.author.username = req.user.username;
                     //save comment
                     comment.save();
-                    item.comments.push(comment);
-                    item.save();
+                    restaurant.comments.push(comment);
+                    restaurant.save();
                     req.flash("success", "Successfully added comment");
-                    res.redirect("/items/" + item._id);
+                    res.redirect("/restaurants/" + restaurant._id);
                 }
             });
         }
@@ -50,7 +50,7 @@ router.get("/:comment_id/edit", middleware.checkCommentOwnership, function(req, 
         if(err){
             res.render("back");
         } else {
-            res.render("comments/edit", {item_id: req.params.id, comment: foundComment});
+            res.render("comments/edit", {restaurant_id: req.params.id, comment: foundComment});
         }
     });
 });
@@ -61,7 +61,7 @@ router.put("/:comment_id", middleware.checkCommentOwnership, function(req, res){
         if(err){
             res.redirect("back");
         } else {
-            res.redirect("/items/" + req.params.id);
+            res.redirect("/restaurants/" + req.params.id);
         }
     });
 });
@@ -74,7 +74,7 @@ router.delete("/:comment_id", middleware.checkCommentOwnership, function(req, re
             res.redirect("back");
         } else {
             req.flash("success", "Comment deleted");
-            res.redirect("/items/" + req.params.id);
+            res.redirect("/restaurants/" + req.params.id);
         }
     });
 });

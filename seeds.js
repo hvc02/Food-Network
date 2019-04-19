@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-var Item = require("./models/item");
+var Restaurant = require("./models/restaurant");
 var Comment = require("./models/comment");
 
 var data = [
@@ -21,30 +21,30 @@ var data = [
 ]
 
 function seedDB(){
-    // Remove all items
-    Item.remove({}, function(err){
+    // Remove all restaurants
+    Restaurant.remove({}, function(err){
         if(err){
             console.log(err);
         }
-        console.log("removed items!");
-         // add a few items
+        console.log("removed restaurants!");
+         // add a few restaurants
     data.forEach(function(seed){
-        Item.create(seed, function(err, item){
+        Restaurant.create(seed, function(err, restaurant){
             if(err){
                 console.log(err)
             } else {
-                console.log("added a item");
+                console.log("added a restaurant");
                 // Create a comment
                 Comment.create(
                     {
-                        text: "This item is great, but I wish there was internet",
+                        text: "This restaurant is great, but I wish there was internet",
                         author: "Homer"
                     }, function(err, comment){
                         if(err){
                             console.log(err);
                         } else {
-                            item.comments.push(comment);
-                            item.save();
+                            restaurant.comments.push(comment);
+                            restaurant.save();
                             console.log("created new comment");
                         }
                     });

@@ -25,7 +25,7 @@ router.post("/register", function(req, res){
         }
         passport.authenticate("local")(req, res, function(){
             req.flash("success", "Welcome to YelpFood " + req.body.username);
-            res.redirect("/items");
+            res.redirect("/restaurants");
         });
     });
 });
@@ -38,7 +38,7 @@ router.get("/login", function(req, res){
 // HANDLING LOGIN LOGIC
 router.post("/login", passport.authenticate("local",
  {  
-    successRedirect: "/items", 
+    successRedirect: "/restaurants", 
     failureRedirect: "/login"
 }), 
 
@@ -51,7 +51,7 @@ router.post("/login", passport.authenticate("local",
 router.get("/logout", function(req, res){
     req.logOut();
     req.flash("success", "Logged you out");
-    res.redirect("/items");
+    res.redirect("/restaurants");
 });
 
 module.exports = router;

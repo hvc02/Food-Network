@@ -4,22 +4,22 @@
 <header class="jumbotron">
     <div class="container">
         <h1>Welcome To YelpFood</h1>
-        <p>View our hand-picked food item from all over the world</p>
-        <p><a class="btn btn-primary btn-lg" href="/items/new">Add new items</a></p>  
+        <p>View our hand-picked food restaurant from all over the world</p>
+        <p><a class="btn btn-primary btn-lg" href="/restaurants/new">Add new restaurants</a></p>  
     </div>  
 </header>
 
 
     <div class="row text-center" style="display: flex; flex-wrap: wrap;">
-        <% items.forEach(function(item){ %>
+        <% restaurants.forEach(function(restaurant){ %>
         <div class="col-md-3 col-sm-6 ">
             <div class="thumbnail">
-                <img src="<%= item.image %>">
+                <img src="<%= restaurant.image %>">
                 <div class="caption">
-                    <h4><%= item.name %></h4>
+                    <h4><%= restaurant.name %></h4>
                 </div>
                 <p>
-                    <a href="/items/<%= item._id %>" class="btn btn-primary">More Info</a>
+                    <a href="/restaurants/<%= restaurant._id %>" class="btn btn-primary">More Info</a>
                 </p>
             </div> 
         </div> 
