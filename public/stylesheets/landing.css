@@ -50,37 +50,37 @@ body {
 }
 
 .slideshow li:nth-child(1) { 
-  background-image: url("../images/beverages-brunch-cocktail-5317.jpg") 
+  background-image: url(https://images.pexels.com/photos/5317/food-salad-restaurant-person.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) 
 }
 .slideshow li:nth-child(2) { 
-  background-image: url("../images/christin-hume-370431-unsplash.jpg");
+  background-image: url(https://images.unsplash.com/photo-1545062070-98b758d7d91c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=925&q=80);
   animation-delay: 10s; 
 }
 .slideshow li:nth-child(3) { 
-  background-image: url("../images/cuisine-delicious-dinner-958545.jpg");
+  background-image: url(https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
   animation-delay: 20s; 
 }
 .slideshow li:nth-child(4) { 
-  background-image: url("../images/edward-franklin-72304-unsplash.jpg");
+  background-image: url(https://images.unsplash.com/photo-1481931098730-318b6f776db0?ixlib=rb-1.2.1&auto=format&fit=crop&w=937&q=80);
   animation-delay: 30s; 
 }
 .slideshow li:nth-child(5) { 
-  background-image: url("../images/whitney-wright-356665-unsplash.jpg");
+  background-image: url(https://images.unsplash.com/photo-1504113888839-1c8eb50233d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=715&q=80);
   animation-delay: 40s; 
 }
 
 .slideshow li:nth-child(6) { 
-  background-image: url("../images/robin-stickel-82145-unsplash.jpg");
+  background-image: url(https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80);
   animation-delay: 50s; 
 }
 
 .slideshow li:nth-child(7) { 
-  background-image: url("../images/stil-336188-unsplash.jpg");
+  background-image: url(https://images.unsplash.com/photo-1516709954566-1a263840db16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80);
   animation-delay: 60s; 
 }
 
 .slideshow li:nth-child(8) { 
-  background-image: url("../images/thomas-tucker-391058-unsplash.jpg");
+  background-image: url(https://images.unsplash.com/photo-1460306855393-0410f61241c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80);
   animation-delay: 70s; 
 }
 

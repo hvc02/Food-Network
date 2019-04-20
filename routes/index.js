@@ -24,7 +24,7 @@ router.post("/register", function(req, res){
             }
         }
         passport.authenticate("local")(req, res, function(){
-            req.flash("success", "Welcome to YelpFood " + req.body.username);
+            req.flash("success", "Welcome to Food Network " + req.body.username);
             res.redirect("/restaurants");
         });
     });
@@ -43,7 +43,7 @@ router.post("/login", passport.authenticate("local",
 }), 
 
  function(req, res){
-    req.flash("success", "welcome to YelpFood " + req.body.username);
+    req.flash("success", "welcome to Food Network " + req.body.username);
     req.flash("error", err.message);
 });
 
