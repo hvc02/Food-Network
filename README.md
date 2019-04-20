@@ -35,7 +35,6 @@ This application is inspired by YelpCamp by Colt Steele.
   Add a better header/title
   Make restaurant display in a grid
 
-
 ##Style the Navbar and Form
 
   Add a navbar to all templates
